@@ -14,7 +14,7 @@ const NotFound = () => {
       <div className="text-center space-y-4 py-20">
         <div className="space-y-2">
           <h1 className="text-4xl font-medium text-foreground">404</h1>
-          <p className="text-muted-foreground">page not found</p>
+          <p className="text-muted-foreground">This page is as lost as my motivation after 2AM debugging.</p>
         </div>
         
         <div className="pt-4">

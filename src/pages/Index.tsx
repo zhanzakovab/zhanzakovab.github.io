@@ -5,38 +5,59 @@ import PostEntry from "@/components/PostEntry";
 const posts = [
   {
     id: 1,
+    slug: "thoughts-on-modern-web-development-patterns",
     title: "Thoughts on modern web development patterns",
     excerpt: "Exploring the shift from complex frameworks to simpler, more maintainable approaches. Sometimes the best solution is the one that doesn't exist yet.",
     timestamp: "2024.01.15",
     type: "thought" as const,
+    links: {
+      github: "https://github.com/user/modern-web-patterns",
+      linkedin: "https://linkedin.com/posts/user/modern-web-dev"
+    }
   },
   {
     id: 2,
+    slug: "case-study-redesigning-fintech-dashboard",
     title: "Case Study: Redesigning a fintech dashboard",
     excerpt: "How we improved user task completion rates by 40% through careful information architecture and progressive disclosure techniques.",
     timestamp: "2024.01.12",
     type: "case-study" as const,
+    links: {
+      linkedin: "https://linkedin.com/posts/user/fintech-dashboard",
+      internalCaseStudy: true
+    }
   },
   {
     id: 3,
+    slug: "building-with-constraints",
     title: "Building with constraints",
     excerpt: "Why limitations often lead to more creative solutions. A reflection on working within technical and design boundaries.",
     timestamp: "2024.01.08",
     type: "idea" as const,
+    links: {
+      github: "https://github.com/user/constraint-examples"
+    }
   },
   {
     id: 4,
+    slug: "site-update-new-project-archive",
     title: "Site update: new project archive",
     excerpt: "Added a proper archive system for past work. Still keeping things minimal, but now with better discoverability.",
     timestamp: "2024.01.05",
     type: "update" as const,
+    links: {}
   },
   {
     id: 5,
+    slug: "on-digital-minimalism-in-design",
     title: "On digital minimalism in design",
     excerpt: "Less interface, more substance. Notes on creating digital experiences that respect attention and prioritize content.",
     timestamp: "2024.01.02",
     type: "thought" as const,
+    links: {
+      linkedin: "https://linkedin.com/posts/user/digital-minimalism",
+      demo: ""
+    }
   },
 ];
 
@@ -68,10 +89,12 @@ const Index = () => {
             {posts.map((post) => (
               <PostEntry
                 key={post.id}
+                slug={post.slug}
                 title={post.title}
                 excerpt={post.excerpt}
                 timestamp={post.timestamp}
                 type={post.type}
+                links={post.links}
               />
             ))}
           </div>
