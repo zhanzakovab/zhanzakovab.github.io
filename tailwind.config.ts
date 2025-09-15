@@ -13,12 +13,26 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        purple: {
+          soft: "hsl(var(--purple-soft))",
+          bright: "hsl(var(--purple-bright))",
+          muted: "hsl(var(--purple-muted))",
+          dark: "hsl(var(--purple-dark))",
+        },
+        code: {
+          background: "hsl(var(--code-background))",
+          comment: "hsl(var(--code-comment))",
+          keyword: "hsl(var(--code-keyword))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
