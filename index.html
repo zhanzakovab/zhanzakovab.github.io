@@ -12,7 +12,7 @@
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="module" crossorigin src="/assets/index-CHWoqgq4.js"></script>
+    <script type="module" crossorigin src="/assets/index-CrwhnNJF.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BP06q-Nj.css">
   </head>
 
@@ -20,11 +20,13 @@
     <div id="root"></div>
     <script>
       // Handle redirect from 404.html
-      var redirect = sessionStorage.getItem('redirect');
-      if (redirect) {
-        sessionStorage.removeItem('redirect');
-        window.history.replaceState(null, null, redirect);
-      }
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
     </script>
   </body>
 </html>
