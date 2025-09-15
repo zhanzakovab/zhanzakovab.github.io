@@ -51,12 +51,6 @@ const Index = () => {
               </ul>
             </div>
 
-            <div className="pt-6 border-t border-border">
-              <p className="text-sm text-code-comment">
-                Always interested in connecting with people working on meaningful problems. 
-                Feel free to reach out through any of the channels in the navigation.
-              </p>
-            </div>
           </div>
         </section>
 
