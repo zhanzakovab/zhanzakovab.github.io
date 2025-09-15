@@ -5,7 +5,7 @@ export interface Post {
   excerpt: string;
   content: string;
   timestamp: string;
-  type: 'thought' | 'case-study' | 'idea' | 'update';
+  type: 'in-process' | 'completed';
   links?: {
     github?: string;
     linkedin?: string;

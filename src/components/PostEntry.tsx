@@ -15,18 +15,16 @@ interface PostEntryProps {
 }
 
 const PostEntry = ({ slug, title, excerpt, timestamp, type, links }: PostEntryProps) => {
-  const getTypeColor = (type: string) => {
-    switch (type) {
-      case 'case-study':
-        return 'text-purple-bright';
-      case 'thought':
-        return 'text-purple-soft';
-      case 'idea':
-        return 'text-purple-muted';
-      default:
-        return 'text-code-keyword';
-    }
-  };
+const getTypeColor = (type: string) => {
+  switch (type) {
+    case 'completed':
+      return 'text-purple-bright';
+    case 'in-process':
+      return 'text-purple-soft';
+    default:
+      return 'text-code-keyword';
+  }
+};
 
   return (
     <article className="post-entry group">
