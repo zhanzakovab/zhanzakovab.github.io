@@ -17,7 +17,7 @@ const Navbar = () => {
               projects
             </Link>
             <a 
-              href="https://github.com" 
+              href="https://github.com/zhanzakovab" 
               target="_blank" 
               rel="noopener noreferrer"
               className="nav-link lowercase tracking-wide flex items-center gap-1"
@@ -26,7 +26,7 @@ const Navbar = () => {
               github
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/botakoz-zhanzakova-098209241/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="nav-link lowercase tracking-wide flex items-center gap-1"

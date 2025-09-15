@@ -10,16 +10,7 @@ const Index = () => {
   return (
     <Layout>
       <div className="space-y-8">
-        {/* Header section */}
-        <header className="space-y-4">
-          <h1 className="text-2xl font-medium text-foreground">
-            digital journal
-          </h1>
-          <p className="text-muted-foreground leading-relaxed max-w-2xl">
-            A collection of thoughts, case studies, and ideas. Everything I share across platforms 
-            lives here first — consider this the source of truth for my work and thinking.
-          </p>
-        </header>
+      
 
         {/* About section */}
         <section className="space-y-6">
