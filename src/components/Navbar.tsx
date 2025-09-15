@@ -12,7 +12,7 @@ const Navbar = () => {
           </Link>
 
           {/* Navigation Links */}
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-4 sm:space-x-8">
             <Link to="/projects" className="nav-link lowercase tracking-wide">
               projects
             </Link>
