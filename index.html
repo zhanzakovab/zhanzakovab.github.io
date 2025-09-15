@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>B — Digital Journal</title>
+    <title>B — Personal Hub</title>
     <meta name="description" content="A personal hub for thoughts, case studies, and ideas. Clean, minimal design with a focus on honest content and thoughtful digital experiences." />
     <meta name="author" content="Botakoz Zhanzakova" />
 
-    <meta property="og:title" content="B — Digital Journal" />
+    <meta property="og:title" content="B — Personal Hub" />
     <meta property="og:description" content="A personal hub for thoughts, case studies, and ideas. Clean, minimal design with a focus on honest content and thoughtful digital experiences." />
     <meta property="og:type" content="website" />
 
@@ -19,11 +19,13 @@
     <script type="module" src="/src/main.tsx"></script>
     <script>
       // Handle redirect from 404.html
-      var redirect = sessionStorage.getItem('redirect');
-      if (redirect) {
-        sessionStorage.removeItem('redirect');
-        window.history.replaceState(null, null, redirect);
-      }
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
     </script>
   </body>
 </html>

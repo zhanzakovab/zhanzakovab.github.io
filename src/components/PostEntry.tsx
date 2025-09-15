@@ -6,6 +6,7 @@ interface PostEntryProps {
   excerpt: string;
   timestamp: string;
   type: 'thought' | 'case-study' | 'idea' | 'update';
+  tags?: string[];
   links?: {
     github?: string;
     linkedin?: string;
@@ -14,7 +15,7 @@ interface PostEntryProps {
   };
 }
 
-const PostEntry = ({ slug, title, excerpt, timestamp, type, links }: PostEntryProps) => {
+const PostEntry = ({ slug, title, excerpt, timestamp, type, tags, links }: PostEntryProps) => {
 const getTypeColor = (type: string) => {
   switch (type) {
     case 'completed':
@@ -46,33 +47,28 @@ const getTypeColor = (type: string) => {
           {excerpt}
         </p>
         
+        {/* Tags section */}
+        {tags && tags.length > 0 && (
+          <div className="flex flex-wrap gap-1 mt-3">
+            {tags.map((tag, index) => (
+              <span 
+                key={index}
+                className="inline-block px-2 py-1 text-xs bg-muted/50 text-muted-foreground rounded border border-border/30 font-mono"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+        
         <div className="mt-3 text-xs text-code-comment opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           → read more
         </div>
       </Link>
 
-      {links && Object.keys(links).length > 0 && (
+      {/* Only show internal case study and demo links, remove GitHub/LinkedIn */}
+      {links && (links.internalCaseStudy || links.demo) && (
         <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-border/30">
-          {links.github && (
-            <a
-              href={links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-code-comment hover:text-purple-soft transition-colors duration-200 font-mono"
-            >
-              [→ GitHub]
-            </a>
-          )}
-          {links.linkedin && (
-            <a
-              href={links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-code-comment hover:text-purple-soft transition-colors duration-200 font-mono"
-            >
-              [→ LinkedIn]
-            </a>
-          )}
           {links.internalCaseStudy && (
             <Link
               to={`/projects/${slug}`}

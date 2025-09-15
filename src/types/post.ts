@@ -6,6 +6,7 @@ export interface Post {
   content: string;
   timestamp: string;
   type: 'in-process' | 'completed';
+  tags?: string[];
   links?: {
     github?: string;
     linkedin?: string;

@@ -17,14 +17,6 @@ const NotFound = () => {
           <p className="text-muted-foreground">This page is as lost as my motivation after 2AM debugging.</p>
         </div>
         
-        <div className="pt-4">
-          <a 
-            href="/" 
-            className="nav-link text-sm"
-          >
-            ← return to journal
-          </a>
-        </div>
       </div>
     </Layout>
   );

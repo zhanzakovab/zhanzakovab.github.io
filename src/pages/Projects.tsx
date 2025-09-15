@@ -15,8 +15,7 @@ const Projects = () => {
             projects
           </h1>
           <p className="text-muted-foreground leading-relaxed max-w-2xl">
-            A collection of thoughts, case studies, and ideas. Everything I share across platforms 
-            lives here first — consider this the source of truth for my work and thinking.
+            
           </p>
         </header>
 
@@ -29,23 +28,31 @@ const Projects = () => {
           </div>
           
           <div className="space-y-4">
-            {posts.map((post) => (
-              <PostEntry
-                key={post.id}
-                slug={post.slug}
-                title={post.title}
-                excerpt={post.excerpt}
-                timestamp={post.timestamp}
-                type={post.type}
-                links={post.links}
-              />
-            ))}
+            {posts
+              .sort((a, b) => {
+                // Convert "2025.08.17" to "2025-08-17" for proper Date parsing
+                const dateA = new Date(a.timestamp.replace(/\./g, '-'));
+                const dateB = new Date(b.timestamp.replace(/\./g, '-'));
+                return dateB.getTime() - dateA.getTime();
+              })
+              .map((post) => (
+                <PostEntry
+                  key={post.id}
+                  slug={post.slug}
+                  title={post.title}
+                  excerpt={post.excerpt}
+                  timestamp={post.timestamp}
+                  type={post.type}
+                  tags={post.tags}
+                  links={post.links}
+                />
+              ))}
           </div>
         </section>
 
         <footer className="pt-8 border-t border-border">
           <p className="text-xs text-code-comment">
-            Built with focus on speed, simplicity, and honest design.
+            ©2025 Botakoz Zhanzakova
           </p>
         </footer>
       </div>

@@ -17,6 +17,14 @@ const Navbar = () => {
               projects
             </Link>
             <a 
+              href="https://drive.google.com/file/d/1hNmC615sQfUtd_e4lWi1ryfvu42AKJcK/view" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="nav-link lowercase tracking-wide flex items-center gap-1"
+            >
+              cv
+            </a>
+            <a 
               href="https://github.com/zhanzakovab" 
               target="_blank" 
               rel="noopener noreferrer"

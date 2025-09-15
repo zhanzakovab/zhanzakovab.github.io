@@ -7,9 +7,24 @@
     "content": "# Thoughts on Modern Web Development Patterns\n\nOver the past few years, I've noticed a fascinating shift in how we approach web development. The industry has moved from building increasingly complex frameworks to embracing simpler, more maintainable approaches.\n\n## The Complexity Trap\n\nIt's easy to fall into the trap of over-engineering. We see a problem and immediately reach for the most sophisticated solution available. But often, the best solution is the one that doesn't exist yet—or the one that's been hiding in plain sight.\n\n## Embracing Simplicity\n\nModern web development is about finding the right balance between power and simplicity. It's about choosing tools that solve your specific problems without introducing unnecessary complexity.\n\n## The Future\n\nAs we move forward, I believe we'll see more developers embracing:\n\n- **Progressive enhancement** over full-stack frameworks\n- **Native web APIs** over custom abstractions\n- **Composition** over inheritance\n- **Explicit over implicit** behavior\n\nSometimes the most innovative approach is to step back and ask: \"What if we did less?\"",
     "timestamp": "2025.08.17",
     "type": "completed",
+    "tags": ["web development", "javascript", "react", "architecture"],
     "links": {
       "github": "https://github.com/user/modern-web-patterns",
       "linkedin": "https://linkedin.com/posts/user/modern-web-dev"
+    }
+  },
+  {
+    "id": 2,
+    "slug": "machine-learning-in-education",
+    "title": "Machine Learning in Education",
+    "excerpt": "How AI and machine learning are transforming educational experiences and personalized learning paths.",
+    "content": "# Machine Learning in Education\n\nEducation is one of the most promising fields for AI and machine learning applications...",
+    "timestamp": "2025.08.20",
+    "type": "completed",
+    "tags": ["machine learning", "education", "AI", "pytorch"],
+    "links": {
+      "github": "https://github.com/user/edtech-ml",
+      "demo": "https://example.com/demo"
     }
   }
 ]
