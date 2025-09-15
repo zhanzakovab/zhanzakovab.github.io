@@ -19,12 +19,19 @@
   <body>
     <div id="root"></div>
     <script>
-      // Handle redirect from 404.html
+      // Handle redirect from 404.html - improved version
       (function(){
         var redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
-        if (redirect && redirect != location.href) {
-          history.replaceState(null, null, redirect);
+        if (redirect && redirect !== location.href) {
+          // Wait for React to load before redirecting
+          window.addEventListener('load', function() {
+            setTimeout(function() {
+              history.replaceState(null, null, redirect);
+              // Force a page refresh to ensure React Router picks up the new URL
+              window.location.reload();
+            }, 100);
+          });
         }
       })();
     </script>
