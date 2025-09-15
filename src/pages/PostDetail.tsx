@@ -59,12 +59,53 @@ const PostDetail = () => {
             </p>
             
             <div className="border-t border-border pt-6">
-              <div 
-                className="prose prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ 
-                  __html: post.content.replace(/\n/g, '<br>') 
-                }}
-              />
+              <div className="prose prose-invert max-w-none">
+                {post.content.split('\n').map((line, index) => {
+                  // Handle headers
+                  if (line.startsWith('# ')) {
+                    return <h1 key={index} className="text-2xl font-bold text-foreground mb-4 mt-6">{line.slice(2)}</h1>;
+                  }
+                  if (line.startsWith('## ')) {
+                    return <h2 key={index} className="text-xl font-semibold text-foreground mb-3 mt-5">{line.slice(3)}</h2>;
+                  }
+                  if (line.startsWith('### ')) {
+                    return <h3 key={index} className="text-lg font-medium text-foreground mb-2 mt-4">{line.slice(4)}</h3>;
+                  }
+                  
+                  // Handle bold text
+                  if (line.includes('**')) {
+                    const parts = line.split(/(\*\*.*?\*\*)/g);
+                    return (
+                      <p key={index} className="mb-4 leading-relaxed">
+                        {parts.map((part, partIndex) => {
+                          if (part.startsWith('**') && part.endsWith('**')) {
+                            return <strong key={partIndex} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+                          }
+                          return part;
+                        })}
+                      </p>
+                    );
+                  }
+                  
+                  // Handle bullet points
+                  if (line.startsWith('- ')) {
+                    return <li key={index} className="mb-1 ml-4">{line.slice(2)}</li>;
+                  }
+                  
+                  // Handle numbered lists
+                  if (/^\d+\. /.test(line)) {
+                    return <li key={index} className="mb-1 ml-4">{line.replace(/^\d+\. /, '')}</li>;
+                  }
+                  
+                  // Handle empty lines
+                  if (line.trim() === '') {
+                    return <br key={index} />;
+                  }
+                  
+                  // Regular paragraphs
+                  return <p key={index} className="mb-4 leading-relaxed">{line}</p>;
+                })}
+              </div>
             </div>
           </div>
         </article>
