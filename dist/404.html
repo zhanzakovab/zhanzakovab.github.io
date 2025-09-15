@@ -11,8 +11,9 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <script>
-      // Simple redirect to index.html
-      window.location.replace('/index.html' + window.location.pathname + window.location.search);
+      // Store the current path and redirect to index.html
+      sessionStorage.setItem('redirect', window.location.href);
+      window.location.replace('/index.html');
     </script>
   </head>
   <body>
