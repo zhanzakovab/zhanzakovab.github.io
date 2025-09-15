@@ -10,15 +10,9 @@
     <meta property="og:description" content="A personal hub for thoughts, case studies, and ideas. Clean, minimal design with a focus on honest content and thoughtful digital experiences." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script>
-      // Store the current path and redirect to index.html
-      sessionStorage.setItem('redirect', window.location.href);
-      window.location.replace('/index.html');
-    </script>
   </head>
   <body>
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: system-ui;">
-      <p>Loading...</p>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
