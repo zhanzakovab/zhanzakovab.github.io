@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface PostEntryProps {
   slug: string;
   title: string;
@@ -37,7 +39,7 @@ const PostEntry = ({ slug, title, excerpt, timestamp, type, links }: PostEntryPr
         </time>
       </div>
       
-      <a href={`/posts/${slug}`} className="block">
+      <Link to={`/posts/${slug}`} className="block">
         <h2 className="post-title text-lg font-medium text-foreground mb-2 transition-colors duration-200">
           {title}
         </h2>
@@ -49,7 +51,7 @@ const PostEntry = ({ slug, title, excerpt, timestamp, type, links }: PostEntryPr
         <div className="mt-3 text-xs text-code-comment opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           → read more
         </div>
-      </a>
+      </Link>
 
       {links && Object.keys(links).length > 0 && (
         <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-border/30">
@@ -74,12 +76,12 @@ const PostEntry = ({ slug, title, excerpt, timestamp, type, links }: PostEntryPr
             </a>
           )}
           {links.internalCaseStudy && (
-            <a
-              href={`/projects/${slug}`}
+            <Link
+              to={`/projects/${slug}`}
               className="text-xs text-code-comment hover:text-purple-soft transition-colors duration-200 font-mono"
             >
               [→ Internal Case Study]
-            </a>
+            </Link>
           )}
           {links.demo && links.demo.trim() && (
             <a

@@ -15,7 +15,7 @@ const PostDetail = () => {
       <Layout>
         <div className="space-y-8">
           <header className="space-y-4">
-            <Link to="/" className="nav-link text-sm">
+            <Link to="/projects" className="nav-link text-sm">
               ← back to journal
             </Link>
             <h1 className="text-2xl font-medium text-foreground">
@@ -34,7 +34,7 @@ const PostDetail = () => {
     <Layout>
       <div className="space-y-8">
         <header className="space-y-4">
-          <Link to="/" className="nav-link text-sm">
+          <Link to="/projects" className="nav-link text-sm">
             ← back to journal
           </Link>
           <div className="flex items-start justify-between">

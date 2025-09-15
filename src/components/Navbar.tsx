@@ -13,9 +13,6 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="flex items-center space-x-8">
-            <Link to="/about" className="nav-link lowercase tracking-wide">
-              about
-            </Link>
             <Link to="/projects" className="nav-link lowercase tracking-wide">
               projects
             </Link>
